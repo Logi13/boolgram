@@ -2,8 +2,13 @@
     display: flex;
     flex-direction: column;
     /* grid-template-rows: 75px 1fr 50px 200px; */
+    gap: 15px;
     margin-top: 15px;
     max-height: 1000px;
+}
+
+.fill {
+    flex-grow: 1;
 }
 
 .post-3-row-header-grid {
@@ -36,6 +41,29 @@
 }
 
 .comment-section {
+    display: flex;
+    flex-direction: row;
+    align-self: left;
+    justify-self: center;
+    padding-left: 15px;
+    
+}
+
+.user-post-comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 6px;
+}
+
+.post-comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    gap: 15px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 6px;

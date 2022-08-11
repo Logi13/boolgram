@@ -56,13 +56,6 @@
   justify-self: center;
 }
 
-.post-image {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
 .icon-align-right {
   display: flex;
   justify-self: right;
@@ -106,12 +99,12 @@ width:100%;
 }
 
 .profile-circular-image {
-  display: inline;
+  display: flex;
   width: 2.5em;
   height: 2.5em;
   border-radius: 50%;
   overflow: hidden;
-  align-self: center;
+  align-self: left;
 }
 
 .profile-circular-image > img{

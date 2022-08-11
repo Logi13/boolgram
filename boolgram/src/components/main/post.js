@@ -17,7 +17,7 @@ const Post = () => {
                     <BsThreeDots />
                 </div>
             </div>
-            <div class="post-image">
+            <div class="fill">
                 <img src="http://placekitten.com/500/500"/>
             </div>
             <div class="comment-icons"> 
@@ -25,8 +25,12 @@ const Post = () => {
                 <FaRegComment />
             </div>
             <div class="comment-section">
-                Comments Section
+                <div class="profile-circular-image">
+                    <img src="http://placekitten.com/500/500"/>
+                </div>
+                <div class="user-post-comment">Some text goes here</div>
             </div>
+            <div className="post-comment"><b>Someone</b> You look very beautiful</div>
         </div>
     </div>
   )
