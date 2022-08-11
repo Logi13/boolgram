@@ -1,0 +1,39 @@
+.body-sidebar-container-3-row-grid {
+    display: grid;
+    grid-template-rows: 100px 50px 1fr;
+    max-height: 300px;
+    margin: 20px;
+}
+  
+.body-sidebar-header-container-3-col-grid {
+    display: grid;
+    grid-template-columns: 50px 1fr 75px;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+  
+.body-sidebar-container-2-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 75px;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.body-sidebar-container-3-col-grid {
+    display: grid;
+    grid-template-columns: 50px 1fr 75px;
+    max-width: 1250px;
+    max-height: 75px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar-visibility {
+      display: none;
+    }
+  }
