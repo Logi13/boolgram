@@ -73,15 +73,3 @@ input:focus {
     height: 2em;
 }
 
-.profile-circular-image {
-    display: inline;
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%;
-    overflow: hidden;
-    align-self: center;
-}
-.profile-circular-image > img{
-    width:100%;
-}
-

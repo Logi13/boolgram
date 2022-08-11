@@ -8,11 +8,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <div class="div-separator"></div> */}
-      
-      
-      <div class="">
-        <div class="body-main-container-2-col-grid">
+      <div>
+        <div class="main-container-2-col-grid">
           <Main />
           <SideBar />
         </div>
