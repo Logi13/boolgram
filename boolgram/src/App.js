@@ -7,7 +7,7 @@ import SideBar from './components/sidebar/sidebar';
 import UserStories from './components/userStories/userStories'
 import MainPostFeed from './components/main/main-feed';
 import StoriesLoadingSpinner from './components/loaders/storiesComponentLoader';
-import PostLoadingSpinner from './components/loaders/postComponentLoader';
+import PostLoader from './components/loaders/postComponentLoader';
 
 import {STORIES_ENDPOINT_URL} from './endpoints';
 import {FEED_POST_ENDPOINT_URL} from './endpoints';
@@ -25,6 +25,7 @@ function App() {
   const [posts, setPosts] = useState(null);
   const [isStoriesLoading, setIsStoriesLoading] = useState(false);
   const [isPostsLoading, setIsPostsLoading] = useState(false);
+  const [isSuggestionsLoading, setIsSuggestionsLoading] = useState(false);
 
   // Fetch from APIU functions
   const getPosts = async () => {
@@ -39,6 +40,7 @@ function App() {
       setTimeout(() => {
         setPosts(data);
         setIsPostsLoading(false);
+        setIsSuggestionsLoading(false);
       })
     })
     .catch(error => {
@@ -71,6 +73,7 @@ function App() {
   useEffect(() => {
     setIsStoriesLoading(true);
     setIsPostsLoading(true);
+    setIsSuggestionsLoading(true);
     // Update the document title using the browser API
     if (!stories) {
       getStories();
@@ -89,9 +92,9 @@ function App() {
         <div class="main-container-2-col-grid">
           <div class="posts-container-2-row-grid">
             {isStoriesLoading ? <StoriesLoadingSpinner /> : <UserStories userStories={stories}/>}
-            {isPostsLoading ? <PostLoadingSpinner /> : <MainPostFeed userPosts={posts}/>}
+            {isPostsLoading ? <PostLoader /> : <MainPostFeed userPosts={posts}/>}
           </div>
-          <SideBar userData={userProfile} userStories={stories}/>
+          <SideBar userData={userProfile} userStories={stories} isLoading={isSuggestionsLoading}/>
         </div>
       </div>
     </div>
