@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsHeart } from 'react-icons/bs'
 import {ImHome3} from 'react-icons/im'
+import UserProfileImage from '../profileImages/profileImage'
 import './header.css'
 
 const Header = () => {
@@ -14,9 +15,12 @@ const Header = () => {
           <div class="nav-menu"> 
             <BsHeart />
             <ImHome3 />
-            <div class="profile-circular-image">
-                <img src="http://placekitten.com/500/500"/>
-            </div>
+            <UserProfileImage 
+              imgSrc="http://placekitten.com/500/500"
+              imgAltText={"Some alt text"}
+              size={30} // 35 for small
+              border={false}
+            />
           </div>
       </div>
     </header>

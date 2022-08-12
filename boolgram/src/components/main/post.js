@@ -3,30 +3,85 @@ import React, { useState } from 'react'
 import { BsHeart } from 'react-icons/bs'
 import {FaRegComment} from 'react-icons/fa'
 import UserProfileComponent from '../profile/userProfileComponent'
+import UserProfileImage from '../profileImages/profileImage'
 import './main.css'
 
 const Post = (props) => {
-  return (
-    <div>
-        <div class="post border">
-            <UserProfileComponent />
-            <div class="">
-                <img src="http://placekitten.com/500/500"/>
-            </div>
-            <div class="comment-icons"> 
-                <BsHeart />
-                <FaRegComment />
-            </div>
-            <div class="comment-section">
-                <div class="profile-circular-image">
-                    <img src="http://placekitten.com/500/500"/>
+    const postData = props.userPostData;
+    const comments = postData.comments;
+    const likes = postData.likes;
+    const likesCount = likes.length;
+
+    // Components
+    let likeComponent;
+
+
+    // Date Calculations
+    const postDate = Date.parse(postData.date.date)
+    // Calculate the time passed since post was made
+    const calculateTimeSincePost = () => {
+        let delta = Math.abs(Date.now() - postDate);
+
+        // calculate (and subtract) whole days
+        let days = Math.floor(delta / 86400); // 86400 seconds in a day
+        delta -= days * 86400;
+    
+        // calculate (and subtract) whole hours
+        let hours = Math.floor(delta / 3600) % 24; // 3600 seconds in an hour, 24 hours per day
+        delta -= hours * 3600;
+    
+        // calculate (and subtract) whole minutes
+        let minutes = Math.floor(delta / 60) % 60; // 60 seconds in a min, 60 min in an hour
+        delta -= minutes * 60;
+
+        return `Post made: ${days} days, ${hours} hours, ${minutes} minutes ago`;
+    }
+
+    // like Component Operations
+    if (likesCount > 0) {
+        const lastLikedBy = likes[likesCount - 1];
+        let likedText;
+        if(likesCount > 1) {
+            likedText = (<p class="center-aligned-text">Liked by <b>{lastLikedBy.username}</b> and <b>{likesCount - 1} others</b>.</p>)
+        } else {
+            likedText = (<p class="center-aligned-text">Liked by <b>{lastLikedBy.username}</b></p>);
+        }
+        likeComponent = (
+            <>
+                <UserProfileImage 
+                    imgSrc={lastLikedBy.profile_picture} 
+                    imgAltText={lastLikedBy.username}
+                    size={25}
+                    showBorder={false}  
+
+                />
+                {likedText}
+            </>
+        )
+    }
+
+    return (
+        <div>
+            <div class="post border">
+                <UserProfileComponent 
+                    userProfileImage={postData.profile_picture}
+                    userProfileName={postData.profile_name}
+                    userProfileFullName={postData.profile_fullname}
+                />
+                <div class="">
+                    <img src={postData.post_image} alt={postData.post_text}/>
                 </div>
-                <div class="user-post-comment">Some text goes here</div>
+                <div class="comment-icons"> 
+                    <BsHeart />
+                    <FaRegComment />
+                </div>
+                <div class="comment-section">
+                    {likeComponent}
+                </div>
+                <div className="post-comment"><b>Someone</b> You look very beautiful</div>
             </div>
-            <div className="post-comment"><b>Someone</b> You look very beautiful</div>
         </div>
-    </div>
-  )
+    )
 }
 
 

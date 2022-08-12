@@ -8,6 +8,7 @@ import UserStories from './userStories/userStories'
 import MainPostFeed from './components/main/main-feed';
 
 import {STORIES_ENDPOINT_URL} from './endpoints';
+import {FEED_POST_ENDPOINT_URL} from './endpoints';
 
 function App() {
   let userProfile = {
@@ -16,13 +17,29 @@ function App() {
     profileImageUrl: 'http://placekitten.com/500/500'
   }
   let [stories, setStories] = useState(null);
+  let [posts, setPosts] = useState(null);
 
-  // will be run only once
-  // in dev it will be run twice due to strict mode
-  useEffect(() => {
-    // Update the document title using the browser API
-    if (!stories) {
-      fetch(STORIES_ENDPOINT_URL)
+  const getPosts = async () => {
+    await fetch(FEED_POST_ENDPOINT_URL)
+    .then(response => {
+      if(response.ok) {
+        return response.json()
+      }
+      throw response;
+    })
+    .then(data => {
+      setTimeout(() => {
+        console.log("Posts fetched: ", data);
+        setPosts(data);
+      })
+    })
+    .catch(error => {
+      console.log("Error while fetching stories: ", error);
+    });
+  };
+
+  const getStories = async () => {
+    await fetch(STORIES_ENDPOINT_URL)
       .then(response => {
         if(response.ok) {
           return response.json()
@@ -31,13 +48,29 @@ function App() {
       })
       .then(data => {
         setTimeout(() => {
-          console.log("Stories fetched: ", data);
+          // console.log("Stories fetched: ", data);
           setStories(data);
         })
       })
       .catch(error => {
         console.log("Error while fetching stories: ", error);
       });
+  }
+
+  // will be run only once
+  // in dev it will be run twice due to strict mode
+  useEffect(() => {
+    // Update the document title using the browser API
+    if (!stories) {
+      getStories();
+    } else {
+      // show loader
+    }
+
+    if (!posts) {
+      getPosts()
+    } else {
+      // show loader
     }
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, []);
@@ -49,7 +82,7 @@ function App() {
         <div class="main-container-2-col-grid">
           <div class="posts-container-2-row-grid">
             <UserStories userStories={stories}/>
-            <MainPostFeed />
+            <MainPostFeed userPosts={posts}/>
           </div>
           <SideBar />
         </div>

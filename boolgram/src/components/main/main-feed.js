@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './main.css'
 import Post from './post'
 
-import {FEED_POST_ENDPOINT_URL} from '../../endpoints';
 
-const MainPostFeed = () => {
+
+const MainPostFeed = (props) => {
+  let postList = null;
+
+  if(props.userPosts) {
+    
+    postList = (
+      <>{props.userPosts.map((userPostJson, index) => <Post
+        key={index.toString()} userPostData={userPostJson} />)}</>)
+  }
+
   return (
     <div>
-    <Post />
-    <Post />
+    {postList}
     </div>
   )
 }

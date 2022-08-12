@@ -8,12 +8,12 @@ const UserProfileComponent = (props) => {
   return (
     <div class="post-3-row-header-grid">
         <UserProfileImage 
-            imgSrc={"http://placekitten.com/500/500"}
-            imgAltText={"cat"}
+            imgSrc={props.userProfileImage}
+            imgAltText={props.userProfileName}
             size={35} // 35 for small
             border={true}
         />
-        <div class="left-aligned-text profile-name-text">Name</div>
+        <div class="left-aligned-text profile-name-text">{props.userProfileFullName}</div>
         <div class="icon-align-right">
             <BsThreeDots />
         </div>
