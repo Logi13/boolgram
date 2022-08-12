@@ -1,6 +1,8 @@
 import React from "react";
 import ContentLoader from 'react-content-loader'
 
+// Credit for the content loader from the tutorial of the npmjs contentLoader page: https://www.npmjs.com/package/react-content-loader
+
 const PostLoader = (props) => {
   return (
     <div class="post">
