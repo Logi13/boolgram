@@ -40,7 +40,14 @@ const Post = (props) => {
         let minutes = Math.floor(delta / 60) % 60; // 60 seconds in a min, 60 min in an hour
         delta -= minutes * 60;
 
-        return `Post made: ${days} days, ${hours} hours, ${minutes} minutes ago`;
+        if(days < 1) {
+            return `Post made: ${hours} hours, ${minutes} minutes ago`;
+        } else if (hours < 1) {
+            return `Post made: ${minutes} minutes ago`;
+        } else {
+            return `Post made: ${days} days, ${hours} hours, ${minutes} minutes ago`;
+        }
+        
     }
 
     // like Component Operations
