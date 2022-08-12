@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './sidebar.css'
 import UserProfileImage from '../profileImages/profileImage'
+import LinkButton from '../linkButton'
+
 const UserProfile = (props) => {
   const userProfileDetails = props.userProfileData
   return (
@@ -13,7 +15,7 @@ const UserProfile = (props) => {
               border={false}
             />
         <div class="center-aligned-text profile-name-text">{userProfileDetails.username}</div>
-        <div class="right-aligned-text" style={{color: "#0066CC"}}>Switch</div>
+        <LinkButton buttonText="Switch" />
         </div>
     </div>
   )

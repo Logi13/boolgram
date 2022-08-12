@@ -3,12 +3,13 @@ import { BsHeart } from 'react-icons/bs'
 import {ImHome3} from 'react-icons/im'
 import UserProfileImage from '../profileImages/profileImage'
 import './header.css'
+import Logo from './logo'
 
 const Header = () => {
   return (
     <header class="header">
       <div className="header-layout-3-col-grid">
-          <div class="logo"> Boolgram </div>
+          <Logo />
           <div class="searchbar"> 
             <input class="input" type="text" placeholder="Search"></input>
           </div>

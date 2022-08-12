@@ -13,16 +13,20 @@ import {STORIES_ENDPOINT_URL} from './endpoints';
 import {FEED_POST_ENDPOINT_URL} from './endpoints';
 
 function App() {
+  // User profile Data
   let userProfile = {
     username: 'zirios',
     fullName: 'John Lioupas',
     profileImageUrl: 'http://placekitten.com/500/500'
   }
+
+  // States
   const [stories, setStories] = useState(null);
   const [posts, setPosts] = useState(null);
   const [isStoriesLoading, setIsStoriesLoading] = useState(false);
   const [isPostsLoading, setIsPostsLoading] = useState(false);
 
+  // Fetch from APIU functions
   const getPosts = async () => {
     await fetch(FEED_POST_ENDPOINT_URL)
     .then(response => {

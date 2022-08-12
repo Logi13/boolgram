@@ -13,22 +13,23 @@ Feed with content -> async call to https://flynn.boolean.careers/exercises/api/b
 Row consisting of 3 Columns:
 
     - Logo
-    - Button
+    - Search Bar
     - Nav Menu
 
 
-### Main Page (List View)
+### Main Page
     - User Stories Section
-      - Posts Section
-        - Each Post Consists of:
-          - Post Header Section
-          - Post Image Section
-          - Post Controls Section
-          - Post Details Section
-          - Comments Section
+      - Each Profile Icon + Name (Reusable)
+    - Posts Section
+      - Each Post Consists of:
+        - Post Header Section 
+        - Post Image Section
+        - Post Controls Section
+        - Comments Section
+        - Post Comments Section
 
 
 ### Right-Side Bar (3 Rows)
-      - User Details Section
+      - User Profile Details Section (Reusable)
       - Friend Suggestions Section
       - Copyright Section

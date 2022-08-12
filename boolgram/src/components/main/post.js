@@ -4,6 +4,7 @@ import { BsHeart } from 'react-icons/bs'
 import {FaRegComment} from 'react-icons/fa'
 import UserProfileComponent from '../profile/userProfileComponent'
 import UserProfileImage from '../profileImages/profileImage'
+import LinkButton from '../linkButton'
 import './main.css'
 
 const Post = (props) => {
@@ -120,6 +121,11 @@ const Post = (props) => {
                 </div>
                 {commentsComponent}
                 <p class="info-text">{calculateTimeSincePost()}</p>
+                <div className='add-comment-row border-top vertical-padding'>
+                    <p>Add a comment</p>
+                    <div className="fill"></div>
+                    <LinkButton buttonText="Post Comment" />
+                </div>
             </div>
         </div>
     )

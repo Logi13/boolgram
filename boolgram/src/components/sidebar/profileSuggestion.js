@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './sidebar.css'
 
 import UserProfileImage from '../profileImages/profileImage'
+import LinkButton from '../linkButton'
 
 const ProfileSuggestion = (props) => {
   return (
@@ -14,7 +15,7 @@ const ProfileSuggestion = (props) => {
               border={false}
             />
             <div class="profile-name-text">{props.userStoryData.profile_name}</div>
-            <div class="right-aligned-text" style={{color: "#0066CC"}}>Follow</div>
+            <LinkButton buttonText="Follow" />
         </div>
     </div>
   )

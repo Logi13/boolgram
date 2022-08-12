@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 5px;
     margin-top: 15px;
-    /* max-height: 1000px; */
 }
 
 .post > img {
@@ -18,20 +17,13 @@
     margin: 15px;
 }
 
-.posts-container-2-row-grid {
-    display: grid;
-    grid-template-rows: 175px 1fr;
-    max-width: 1000px;
-    margin: 20px;
-}
-
 .comment-icons {
     display: flex;
     flex-direction: row;
     align-self: left;
     flex-wrap: nowrap;
     gap: 10px;
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .comment-icons > svg {
@@ -79,3 +71,11 @@
     cursor: pointer;
 }
 
+.add-comment-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
