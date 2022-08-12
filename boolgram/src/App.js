@@ -4,7 +4,7 @@ import './App.css';
 
 import Header from './components/header/header';
 import SideBar from './components/sidebar/sidebar';
-import UserStories from './userStories/userStories'
+import UserStories from './components/userStories/userStories'
 import MainPostFeed from './components/main/main-feed';
 import StoriesLoadingSpinner from './components/loaders/storiesComponentLoader';
 import PostLoadingSpinner from './components/loaders/postComponentLoader';

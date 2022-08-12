@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './userStories.css'
 
-import UserStoriesProfileComponent from '../components/profile/userStoriesProfileComponent';
+import UserStoriesProfileComponent from '../profile/userStoriesProfileComponent';
 
 const UserStories = (props) => {
 
