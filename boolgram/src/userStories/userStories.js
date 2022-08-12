@@ -1,30 +1,24 @@
 import React, { useState } from 'react'
 import './userStories.css'
 
-const UserStories = () => {
+import UserStoriesProfileComponent from '../components/profile/userStoriesProfileComponent';
+
+const UserStories = (props) => {
+
+    let stories = null;
+    if(props.userStories) {
+        // we have received user Stories
+        // so display them
+        stories = (
+            <>{props.userStories.map((userStoryJson, index) => <UserStoriesProfileComponent 
+                key={index.toString()} userStoryData={userStoryJson} />)}</>
+        );
+    } else {
+        // we have no stories, so display loader
+    }
   return (
-    <div class="body-stories-area border">
-        <div class="body-stories-2-row-grid">
-            <div class="profile-circular-image-with-border">
-                <img src="http://placekitten.com/500/500"/>
-            </div>
-            <div class="center-aligned-text">Name</div>
-        </div>
-
-        <div class="body-stories-2-row-grid">
-            <div class="profile-circular-image-with-border">
-                <img src="http://placekitten.com/500/500"/>
-            </div>
-            <div class="center-aligned-text">Name</div>
-        </div>
-
-        <div class="body-stories-2-row-grid">
-            <div class="profile-circular-image-with-border">
-                <img src="http://placekitten.com/500/500"/>
-            </div>
-            <div class="center-aligned-text">Name</div>
-        </div>
-        
+    <div class="user-stories-area border">
+        {stories} 
     </div>
   )
 }
