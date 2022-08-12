@@ -79,6 +79,11 @@
   flex-grow: 1;
 }
 
+.link-buttons {
+  color: #0066CC;
+  cursor: pointer;
+}
+
 .main-container-2-col-grid {
   padding-top: 50px;
   display: grid;
