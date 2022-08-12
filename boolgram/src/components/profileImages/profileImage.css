@@ -10,14 +10,14 @@
     width:100%;
 }
   
-  .profile-circular-image {
+.profile-circular-image {
     display: flex;
     /* width: 35px;
     height: 35px; */
     border-radius: 50%;
     overflow: hidden;
-  }
-  
-  .profile-circular-image > img{
+}
+
+.profile-circular-image > img{
     width:100%;
-  }
+}

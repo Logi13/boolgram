@@ -1,6 +1,7 @@
-.user-stories-area{
+.user-stories-area {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 5px;
     gap: 30px;
     padding: 30px;
@@ -10,4 +11,3 @@
     max-height: 100px;
     max-width: 1000px;
 }
-

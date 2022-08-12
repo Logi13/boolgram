@@ -75,7 +75,15 @@
   margin-right: auto;
 }
 
-
+.info-text {
+  display: flex;
+  align-self: left;
+  padding: 15px;
+  
+  font-family: "Comic Sans MS", "Comic Sans";
+  color: #8E8E8E;
+  font-size: 14px;
+}
 
 @media only screen and (max-width: 600px) {
   .main-container-2-col-grid {

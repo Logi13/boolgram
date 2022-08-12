@@ -119,7 +119,7 @@ const Post = (props) => {
                     {likeComponent}
                 </div>
                 {commentsComponent}
-                <p class="post-info">{calculateTimeSincePost()}</p>
+                <p class="info-text">{calculateTimeSincePost()}</p>
             </div>
         </div>
     )

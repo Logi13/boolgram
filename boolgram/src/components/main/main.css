@@ -79,12 +79,3 @@
     cursor: pointer;
 }
 
-.post-info {
-    display: flex;
-    align-self: left;
-    padding: 15px;
-    
-    font-family: "Comic Sans MS", "Comic Sans";
-    color: #8E8E8E;
-    font-size: 14px;
-}
