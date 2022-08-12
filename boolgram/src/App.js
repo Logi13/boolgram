@@ -28,7 +28,7 @@ function App() {
 
   // Fetch from APIU functions
   const getPosts = async () => {
-    await fetch(FEED_POST_ENDPOINT_URL)
+    fetch(FEED_POST_ENDPOINT_URL)
     .then(response => {
       if(response.ok) {
         return response.json()
@@ -47,7 +47,7 @@ function App() {
   };
 
   const getStories = async () => {
-    await fetch(STORIES_ENDPOINT_URL)
+    fetch(STORIES_ENDPOINT_URL)
       .then(response => {
         if(response.ok) {
           return response.json()
