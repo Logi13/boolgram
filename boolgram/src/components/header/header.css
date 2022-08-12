@@ -65,6 +65,7 @@ input:focus {
     flex-direction: row;
     align-self: center;
     flex-wrap: nowrap;
+    justify-content: right;
     gap: 10px;
 }
 

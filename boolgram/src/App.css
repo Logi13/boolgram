@@ -6,21 +6,6 @@
   background:#FDFDFC;
 }
 
-.box-red {
-  border: 1px dashed red;
-  padding: 2px;
-}
-
-.box-green {
-  border: 1px dashed green;
-  padding: 2px;
-}
-
-.box-blue {
-  border: 1px dashed blue;
-  padding: 2px;
-}
-
 .App {
   width: 100vw;
   height: 100vh;
@@ -134,5 +119,3 @@
     display: none;
   }
 }
-
-
