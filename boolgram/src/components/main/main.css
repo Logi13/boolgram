@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 15px;
     margin-top: 15px;
-    max-height: 1000px;
+    /* max-height: 1000px; */
 }
 
 .fill {
@@ -66,4 +66,26 @@
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 6px;
+}
+
+.show-all-comments-message {
+    display: flex;
+    align-self: left;
+    /* padding-left: 5px; */
+    
+    font-family: "Comic Sans MS", "Comic Sans";
+    color: #8E8E8E;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.post-info {
+    display: flex;
+    align-self: left;
+    padding: 15px;
+    
+    font-family: "Comic Sans MS", "Comic Sans";
+    color: #8E8E8E;
+    font-size: 14px;
+    cursor: pointer;
 }

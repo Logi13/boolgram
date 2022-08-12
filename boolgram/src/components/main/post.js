@@ -7,13 +7,18 @@ import UserProfileImage from '../profileImages/profileImage'
 import './main.css'
 
 const Post = (props) => {
+    let [showAllComments, setShowAllComments] = useState(false);
+    
+
     const postData = props.userPostData;
     const comments = postData.comments;
+    const commentsCount = comments.length;
     const likes = postData.likes;
     const likesCount = likes.length;
 
     // Components
-    let likeComponent;
+    let likeComponent = null;
+    let commentsComponent = null;
 
 
     // Date Calculations
@@ -60,6 +65,37 @@ const Post = (props) => {
         )
     }
 
+
+    // Comment Component Operations
+    const handleShowAllClick = event => {
+        setShowAllComments(true);
+        diplayComments();
+    };
+
+    const diplayComments = () => {
+        if (commentsCount > 0) {
+            if (commentsCount === 0 ) {
+                // message be the first to comment
+                commentsComponent = (
+                    <div className="post-comment">
+                        Be the first to comment!
+                    </div>
+                );
+            } else {
+                // display the comments
+                if(showAllComments) {
+                    commentsComponent = (<>{comments.map((comment, index) => {
+                        return <div key={index.toString()} className="post-comment"><b>{comment.username}</b> {comment.text}</div>
+                      })}</>)
+                } else {
+                    commentsComponent = (<div class="post-comment show-all-comments-message" onClick={handleShowAllClick}>Show all {commentsCount} comments.</div>);
+                }
+            }
+        }
+    }
+
+    diplayComments();
+
     return (
         <div>
             <div class="post border">
@@ -71,6 +107,7 @@ const Post = (props) => {
                 <div class="">
                     <img src={postData.post_image} alt={postData.post_text}/>
                 </div>
+                
                 <div class="comment-icons"> 
                     <BsHeart />
                     <FaRegComment />
@@ -78,7 +115,8 @@ const Post = (props) => {
                 <div class="comment-section">
                     {likeComponent}
                 </div>
-                <div className="post-comment"><b>Someone</b> You look very beautiful</div>
+                {commentsComponent}
+                <p class="post-info">{calculateTimeSincePost()}</p>
             </div>
         </div>
     )
