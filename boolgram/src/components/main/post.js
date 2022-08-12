@@ -72,6 +72,11 @@ const Post = (props) => {
         diplayComments();
     };
 
+    const handleHideAllClick = event => {
+        setShowAllComments(false);
+        diplayComments();
+    };
+
     const diplayComments = () => {
         if (commentsCount > 0) {
             if (commentsCount === 0 ) {
@@ -85,8 +90,8 @@ const Post = (props) => {
                 // display the comments
                 if(showAllComments) {
                     commentsComponent = (<>{comments.map((comment, index) => {
-                        return <div key={index.toString()} className="post-comment"><b>{comment.username}</b> {comment.text}</div>
-                      })}</>)
+                        return <div key={index.toString()} className="post-comment"><b>{comment.username}</b> {comment.text}</div>;
+                      })} <div class="post-comment show-all-comments-message" onClick={handleHideAllClick}>Hide all {commentsCount} comments.</div></>)
                 } else {
                     commentsComponent = (<div class="post-comment show-all-comments-message" onClick={handleShowAllClick}>Show all {commentsCount} comments.</div>);
                 }
@@ -104,9 +109,7 @@ const Post = (props) => {
                     userProfileName={postData.profile_name}
                     userProfileFullName={postData.profile_fullname}
                 />
-                <div class="">
-                    <img src={postData.post_image} alt={postData.post_text}/>
-                </div>
+                <img src={postData.post_image} alt={postData.post_text}/>
                 
                 <div class="comment-icons"> 
                     <BsHeart />
