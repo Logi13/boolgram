@@ -13,7 +13,7 @@ const UserProfile = (props) => {
               border={false}
             />
         <div class="center-aligned-text profile-name-text">{userProfileDetails.username}</div>
-        <div class="right-aligned-text">Settings</div>
+        <div class="right-aligned-text" style={{color: "#0066CC"}}>Switch</div>
         </div>
     </div>
   )

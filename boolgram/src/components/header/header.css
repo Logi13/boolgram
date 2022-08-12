@@ -2,8 +2,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,17 +40,19 @@
     margin-top: 10px;
     padding: 8px;
 
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
+    border-top-style: groove;
+    border-right-style: groove;
+    border-left-style: groove;
     border-bottom-style: groove;
-
+    border-radius: 8px;
 
     text-align: center;
     font-size: 14px; 
     font-family: "Comic Sans MS", "Comic Sans";
     
-    color:#ccc; 
+    color:#8E8E8E; 
+    background-color: #EFEFEF;
+    -webkit-appearance: none;
 }
 input:focus { 
     outline: none !important;
