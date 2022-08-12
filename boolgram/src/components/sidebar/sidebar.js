@@ -19,8 +19,8 @@ const SideBar = (props) => {
         <UserProfile userProfileData={props.userData}/>
         <div>
             <div class="body-sidebar-container-2-col-grid">
-            <div class="left-aligned-text info-text-no-padding">Friend Suggestions</div>
-            <div class="right-aligned-text"><b>Show All</b></div>
+            <div class="left-aligned-text info-text-no-padding">Suggestions For You</div>
+            <div class="right-aligned-text" style={{cursor:"pointer"}}><b>See All</b></div>
             </div>
         </div>
         {storiesList}

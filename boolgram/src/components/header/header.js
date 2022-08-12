@@ -7,7 +7,7 @@ import Logo from './logo'
 
 const Header = () => {
   return (
-    <header class="header">
+    <header class="header border-bottom">
       <div className="header-layout-3-col-grid">
           <Logo />
           <div class="searchbar"> 
