@@ -8,7 +8,6 @@ const MainPostFeed = (props) => {
   let postList = null;
 
   if(props.userPosts) {
-    
     postList = (
       <>{props.userPosts.map((userPostJson, index) => <Post
         key={index.toString()} userPostData={userPostJson} />)}</>)

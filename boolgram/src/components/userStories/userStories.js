@@ -4,7 +4,6 @@ import './userStories.css'
 import UserStoriesProfileComponent from '../profile/userStoriesProfileComponent';
 
 const UserStories = (props) => {
-
     let stories = null;
     if(props.userStories) {
         // we have received user Stories
@@ -13,14 +12,13 @@ const UserStories = (props) => {
             <>{props.userStories.map((userStoryJson, index) => <UserStoriesProfileComponent 
                 key={index.toString()} userStoryData={userStoryJson} />)}</>
         );
-    } else {
-        // we have no stories, so display loader
     }
-  return (
-    <div class="user-stories-area border">
-        {stories} 
-    </div>
-  )
+
+    return (
+        <div class="user-stories-area border">
+            {stories} 
+        </div>
+    )
 }
 
 

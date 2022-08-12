@@ -8,14 +8,14 @@ import LinkButton from '../linkButton'
 import './main.css'
 
 const Post = (props) => {
-    let [showAllComments, setShowAllComments] = useState(false);
-    
-
     const postData = props.userPostData;
     const comments = postData.comments;
     const commentsCount = comments.length;
     const likes = postData.likes;
     const likesCount = likes.length;
+
+    // States
+    let [showAllComments, setShowAllComments] = useState(false);
 
     // Components
     let likeComponent = null;
@@ -112,17 +112,17 @@ const Post = (props) => {
                 />
                 <img src={postData.post_image} alt={postData.post_text}/>
                 
-                <div class="comment-icons"> 
+                <div class="post-icons"> 
                     <BsHeart />
                     <FaRegComment />
                 </div>
-                <div class="comment-section">
+                <div class="post-info-section">
                     {likeComponent}
                 </div>
                 {commentsComponent}
                 <p class="info-text">{calculateTimeSincePost()}</p>
                 <div className='add-comment-row border-top vertical-padding'>
-                    <p>Add a comment</p>
+                    <input class="input-comment" type="text" placeholder="Add a comment"></input>
                     <div className="fill"></div>
                     <LinkButton buttonText="Post Comment" />
                 </div>
