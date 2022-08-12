@@ -47,16 +47,13 @@ function App() {
       <Header />
       <div>
         <div class="main-container-2-col-grid">
-        <div class="">
           <div class="posts-container-2-row-grid">
-                  <UserStories userStories={stories}/>
-                  <MainPostFeed />
-              </div>
+            <UserStories userStories={stories}/>
+            <MainPostFeed />
           </div>
           <SideBar />
         </div>
       </div>
-      
     </div>
   );
 }

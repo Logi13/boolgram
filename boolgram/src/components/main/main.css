@@ -1,7 +1,6 @@
 .post {
     display: flex;
     flex-direction: column;
-    /* grid-template-rows: 75px 1fr 50px 200px; */
     gap: 15px;
     margin-top: 15px;
     max-height: 1000px;

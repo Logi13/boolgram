@@ -1,23 +1,16 @@
 import React, { useState } from 'react'
-import {BsThreeDots} from 'react-icons/bs'
+
 import { BsHeart } from 'react-icons/bs'
 import {FaRegComment} from 'react-icons/fa'
+import UserProfileComponent from '../profile/userProfileComponent'
 import './main.css'
 
-const Post = () => {
+const Post = (props) => {
   return (
     <div>
         <div class="post border">
-            <div class="post-3-row-header-grid">
-                <div class="profile-circular-image-with-border-small">
-                    <img src="http://placekitten.com/500/500"/>
-                </div>
-                <div class="left-aligned-text profile-name-text">Name</div>
-                <div class="icon-align-right">
-                    <BsThreeDots />
-                </div>
-            </div>
-            <div class="fill">
+            <UserProfileComponent />
+            <div class="">
                 <img src="http://placekitten.com/500/500"/>
             </div>
             <div class="comment-icons"> 

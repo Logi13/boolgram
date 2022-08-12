@@ -1,0 +1,24 @@
+.profile-circular-image-with-border {
+    display: flex;
+    /* width: 55px;
+    height: 55px; */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #825350;
+}
+.profile-circular-image-with-border img{
+    width:100%;
+}
+  
+  .profile-circular-image {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    align-self: left;
+  }
+  
+  .profile-circular-image > img{
+    width:100%;
+  }
