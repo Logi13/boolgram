@@ -10,9 +10,8 @@ Feed with content -> async call to https://flynn.boolean.careers/exercises/api/b
 ## Page Structure
 
 ### Header 
-Row consisting of 3 Columns:
-
-    - Logo
+3 Columns:
+    - Logo (Reusable)
     - Search Bar
     - Nav Menu
 
